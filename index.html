@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>Melissa ❤️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       overflow: hidden;
-      font-family: 'Segoe UI', sans-serif;
       background: black;
       color: white;
+      font-family: 'Montserrat', sans-serif;
     }
 
     .stars {
@@ -37,17 +38,33 @@
     }
 
     .message h1 {
+      font-family: 'Dancing Script', cursive;
       font-size: 5em;
       margin: 0;
+      color: #ffcccc;
+      animation: floatText 5s ease-in-out infinite alternate;
     }
 
     .message p {
-      font-size: 8em;
+      font-size: 4em;
+      font-weight: 700;
+      color: #ffffff;
+      animation: scaleIn 2s ease-out;
     }
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translate(-50%, -60%); }
       to { opacity: 1; transform: translate(-50%, -50%); }
+    }
+
+    @keyframes floatText {
+      0% { transform: translate(-50%, -50%) scale(1); }
+      100% { transform: translate(-50%, -52%) scale(1.03); }
+    }
+
+    @keyframes scaleIn {
+      0% { opacity: 0; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1); }
     }
 
     .heart {
@@ -75,7 +92,6 @@
   </div>
 
   <script>
-    // Create falling hearts
     for (let i = 0; i < 30; i++) {
       const heart = document.createElement('div');
       heart.classList.add('heart');

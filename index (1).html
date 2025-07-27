@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>be1.ru</title>
+</head>
+<body>
+<p>&lt;!DOCTYPE html&gt;</p>
+
+<p>&lt;html lang=&quot;ru&quot;&gt;</p>
+
+<p>&lt;head&gt;</p>
+
+<p>&nbsp; &lt;meta charset=&quot;UTF-8&quot;&gt;</p>
+
+<p>&nbsp; &lt;title&gt;Мелисса, я люблю тебя&lt;/title&gt;</p>
+
+<p>&nbsp; &lt;style&gt;</p>
+
+<p>&nbsp; &nbsp; html, body {</p>
+
+<p>&nbsp; &nbsp; &nbsp; margin: 0;</p>
+
+<p>&nbsp; &nbsp; &nbsp; padding: 0;</p>
+
+<p>&nbsp; &nbsp; &nbsp; height: 100%;</p>
+
+<p>&nbsp; &nbsp; &nbsp; overflow: hidden;</p>
+
+<p>&nbsp; &nbsp; &nbsp; font-family: &#39;Segoe UI&#39;, sans-serif;</p>
+
+<p>&nbsp; &nbsp; &nbsp; color: white;</p>
+
+<p>&nbsp; &nbsp; &nbsp; text-align: center;</p>
+
+<p>&nbsp; &nbsp; &nbsp; background: url(&#39;http://spacegid.com/wp-content/uploads/2016/03/Zvezdnoe-nebo.jpg&#39;) no-repeat center center fixed;</p>
+
+<p>&nbsp; &nbsp; &nbsp; background-size: cover;</p>
+
+<p>&nbsp; &nbsp; }</p>
+
+<p>&nbsp; &nbsp; .overlay {</p>
+
+<p>&nbsp; &nbsp; &nbsp; background: rgba(0, 0, 0, 0.6);</p>
+
+<p>&nbsp; &nbsp; &nbsp; position: absolute;</p>
+
+<p>&nbsp; &nbsp; &nbsp; top: 0;</p>
+
+<p>&nbsp; &nbsp; &nbsp; left: 0;</p>
+
+<p>&nbsp; &nbsp; &nbsp; width: 100%;</p>
+
+<p>&nbsp; &nbsp; &nbsp; height: 100%;</p>
+
+<p>&nbsp; &nbsp; &nbsp; display: flex;</p>
+
+<p>&nbsp; &nbsp; &nbsp; align-items: center;</p>
+
+<p>&nbsp; &nbsp; &nbsp; justify-content: center;</p>
+
+<p>&nbsp; &nbsp; &nbsp; flex-direction: column;</p>
+
+<p>&nbsp; &nbsp; &nbsp; padding: 20px;</p>
+
+<p>&nbsp; &nbsp; }</p>
+
+<p>&nbsp; &nbsp; h1 {</p>
+
+<p>&nbsp; &nbsp; &nbsp; font-size: 3em;</p>
+
+<p>&nbsp; &nbsp; &nbsp; margin-bottom: 20px;</p>
+
+<p>&nbsp; &nbsp; &nbsp; animation: fadeIn 3s ease forwards;</p>
+
+<p>&nbsp; &nbsp; }</p>
+
+<p>&nbsp; &nbsp; p {</p>
+
+<p>&nbsp; &nbsp; &nbsp; font-size: 1.5em;</p>
+
+<p>&nbsp; &nbsp; &nbsp; animation: fadeIn 6s ease forwards;</p>
+
+<p>&nbsp; &nbsp; }</p>
+
+<p>&nbsp; &nbsp; @keyframes fadeIn {</p>
+
+<p>&nbsp; &nbsp; &nbsp; from { opacity: 0; transform: translateY(20px); }</p>
+
+<p>&nbsp; &nbsp; &nbsp; to { opacity: 1; transform: translateY(0); }</p>
+
+<p>&nbsp; &nbsp; }</p>
+
+<p>&nbsp; &nbsp; .hearts {</p>
+
+<p>&nbsp; &nbsp; &nbsp; position: absolute;</p>
+
+<p>&nbsp; &nbsp; &nbsp; width: 100%;</p>
+
+<p>&nbsp; &nbsp; &nbsp; height: 100%;</p>
+
+<p>&nbsp; &nbsp; &nbsp; pointer-events: none;</p>
+
+<p>&nbsp; &nbsp; &nbsp; overflow: hidden;</p>
+
+<p>&nbsp; &nbsp; }</p>
+
+<p>&nbsp; &nbsp; .heart {</p>
+
+<p>&nbsp; &nbsp; &nbsp; position: absolute;</p>
+
+<p>&nbsp; &nbsp; &nbsp; color: #ff4d6d;</p>
+
+<p>&nbsp; &nbsp; &nbsp; font-size: 2em;</p>
+
+<p>&nbsp; &nbsp; &nbsp; animation: float 10s infinite;</p>
+
+<p>&nbsp; &nbsp; }</p>
+
+<p>&nbsp; &nbsp; @keyframes float {</p>
+
+<p>&nbsp; &nbsp; &nbsp; 0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }</p>
+
+<p>&nbsp; &nbsp; &nbsp; 100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }</p>
+
+<p>&nbsp; &nbsp; }</p>
+
+<p>&nbsp; &lt;/style&gt;</p>
+
+<p>&lt;/head&gt;</p>
+
+<p>&lt;body&gt;</p>
+
+<p>&nbsp; &lt;div class=&quot;overlay&quot;&gt;</p>
+
+<p>&nbsp; &nbsp; &lt;h1&gt;Melissa&lt;/h1&gt;</p>
+
+<p>&nbsp; &nbsp; &lt;p&gt;I love you&nbsp;❤️&lt;/p&gt;</p>
+
+<p>&nbsp; &lt;/div&gt;</p>
+
+<p>&nbsp; &lt;div class=&quot;hearts&quot; id=&quot;hearts&quot;&gt;&lt;/div&gt;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp; &lt;audio autoplay loop&gt;</p>
+
+<p>&nbsp; &nbsp; &lt;source src=&quot;https://youtu.be/E2Rj2gQAyPA?si=iGAZ9spUE-G_OpNB&quot;&gt;</p>
+
+<p>&nbsp; &lt;/audio&gt;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp; &lt;script&gt;</p>
+
+<p>&nbsp; &nbsp; const hearts = document.getElementById(&#39;hearts&#39;);</p>
+
+<p>&nbsp; &nbsp; function createHeart() {</p>
+
+<p>&nbsp; &nbsp; &nbsp; const heart = document.createElement(&#39;div&#39;);</p>
+
+<p>&nbsp; &nbsp; &nbsp; heart.classList.add(&#39;heart&#39;);</p>
+
+<p>&nbsp; &nbsp; &nbsp; heart.style.left = Math.random() * 100 + &#39;vw&#39;;</p>
+
+<p>&nbsp; &nbsp; &nbsp; heart.style.animationDuration = 5 + Math.random() * 5 + &#39;s&#39;;</p>
+
+<p>&nbsp; &nbsp; &nbsp; heart.innerHTML = &#39;❤️&#39;;</p>
+
+<p>&nbsp; &nbsp; &nbsp; hearts.appendChild(heart);</p>
+
+<p>&nbsp; &nbsp; &nbsp; setTimeout(() =&gt; heart.remove(), 10000);</p>
+
+<p>&nbsp; &nbsp; }</p>
+
+<p>&nbsp; &nbsp; setInterval(createHeart, 500);</p>
+
+<p>&nbsp; &lt;/script&gt;</p>
+
+<p>&lt;/body&gt;</p>
+
+<p>&lt;/html&gt;</p>
+</body>
+</html>

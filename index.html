@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Melissa ❤️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+  <main class="message" role="main" aria-label="Love message to Melissa">
+    <h1>Melissa</h1>
+    <p>I love you <span aria-hidden="true">❤️</span></p>
+  </main>
+
+  <script>
+    // Scale the number of hearts with the screen size for better responsiveness
+    function spawnHearts() {
+      const area = window.innerWidth * window.innerHeight;
+      const count = Math.min(100, Math.max(20, Math.round(area / 30000))); // 20–100 hearts depending on area
+      for (let i = 0; i < count; i++) {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.style.left = `${Math.random() * 100}vw`;
+        heart.style.top = `${Math.random() * -100}vh`;
+        heart.style.animationDuration = `${5 + Math.random() * 10}s`;
+        heart.style.animationDelay = `${Math.random() * 5}s`;
+        heart.style.opacity = `${0.3 + Math.random() * 0.7}`;
+        heart.style.transform = `translateY(0) rotate(${Math.random() * 40 - 20}deg)`;
+        document.body.appendChild(heart);
+      }
+    }
+    spawnHearts();
+
+    // Recalculate on resize (debounced)
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        document.querySelectorAll('.heart').forEach(h => h.remove());
+        spawnHearts();
+      }, 200);
+    });
+  </script>
+</body>
+</html>
